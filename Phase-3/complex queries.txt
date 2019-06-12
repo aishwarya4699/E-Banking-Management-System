@@ -1,0 +1,7 @@
+1) select max(debit_amt) from debit where debit_amt<(select max(debit_amt) from debit);
+2) select users.user_name,account.acc_balance from users inner join account on account.acc_ownerid=users.user_id;
+3) select user_name from users where exists(select debit_type from debit where did=users.user_id and debit.dd_tenure>10);
+4) select * from users where user_id in (select distinct cid from credit where credit_amt<10000);
+5) select tf_name,tf_sender_accno,tf_reciever_accno,tf_amt from fund_transfer group by tf_name,tf_sender_accno,tf_reciever_accno,tf_amt,tf_id having tf_id>5;
+6) create view l2 as select loan_type,avg(loan_amt) as l_amt from loans join users on loans.loan_userid=users.user_id group by loan_type;
+   select * from l2;
