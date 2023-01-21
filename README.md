@@ -1,4 +1,4 @@
-# DBMS-project
+# DBMS Project
 
 Project Name - E - Banking Management System
 
